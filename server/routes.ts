@@ -1,13 +1,12 @@
 import type { Express, Request } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertProcessingJobSchema } from "@shared/schema";
+import { insertProcessingJobSchema } from "../shared/schema";
 import multer from "multer";
 import path from "path";
 import fs from "fs";
 import { promises as fsPromises } from "fs";
 import { Document, Packer, Paragraph, TextRun } from "docx";
-// Dynamic import for pdf-parse will be done in the function
 
 // Extend Express Request type to include multer file
 interface MulterRequest extends Request {
